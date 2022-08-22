@@ -5,11 +5,14 @@ import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
 import { loadRemoteModule } from '@nrwl/angular/mf';
+import { ButtonModule } from 'primeng/button';
+import { ProgrammaticLoadingComponent } from './programmatic-loading/programmatic-loading.component';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
+    ButtonModule,
     RouterModule.forRoot(
       [
         {
@@ -33,6 +36,7 @@ import { loadRemoteModule } from '@nrwl/angular/mf';
       ],
       { initialNavigation: 'enabledBlocking' }
     ),
+    ProgrammaticLoadingComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { EventBusService, EventData } from '@mfe-poc/shared/ui';
 
 @Component({
@@ -8,6 +8,9 @@ import { EventBusService, EventData } from '@mfe-poc/shared/ui';
 })
 export class AppComponent implements OnInit {
   title = 'shell';
+
+  @ViewChild('placeHolder', { read: ViewContainerRef })
+  viewContainer!: ViewContainerRef;
 
   constructor(
     private eventBusService: EventBusService
