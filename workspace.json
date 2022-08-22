@@ -4,6 +4,7 @@
   "projects": {
     "dashboard": "apps/dashboard",
     "login": "apps/login",
+    "shared-ui": "libs/shared/ui",
     "shell": "apps/shell"
   }
 }

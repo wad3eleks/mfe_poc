@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
 import { RemoteEntryComponent } from './entry.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { TableModule } from 'primeng/table';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
-  declarations: [RemoteEntryComponent, NxWelcomeComponent],
+  declarations: [RemoteEntryComponent, DemoComponent],
   imports: [
     CommonModule,
+    TableModule,
     RouterModule.forChild([
       {
         path: '',
         component: RemoteEntryComponent,
+        children: [
+          {
+            path: 'product',
+            component: DemoComponent,
+          }
+        ]
       },
     ]),
   ],
